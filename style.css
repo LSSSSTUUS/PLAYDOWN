@@ -1,0 +1,115 @@
+:root {
+  --bg: #0f1416;
+  --fg: #e6e6e6;
+  --accent: #ff6f3d;
+  --accent-2: #36c67a;
+  --ui: #1b2226;
+  --ui2: #232b30;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  overflow: hidden;
+  font-family: "Lucky Guy", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+}
+
+.hud {
+  position: fixed;
+  top: env(safe-area-inset-top, 8px);
+  left: env(safe-area-inset-left, 8px);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#levelLabel, #fpsLabel {
+  background: rgba(27,34,38,0.7);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.controls {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom) + 10px);
+  left: 0; right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 0 10px;
+  z-index: 3;
+}
+
+.btn {
+  background: var(--ui);
+  color: var(--fg);
+  border: 0;
+  border-radius: 14px;
+  font-size: 24px;
+  min-height: 56px;
+  box-shadow: 0 2px 0 var(--ui2) inset, 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.btn:active {
+  background: #12171a;
+  transform: translateY(1px);
+}
+
+.btn.left { }
+.btn.right { }
+.btn.jump {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.watermark {
+  background: rgba(27,34,38,0.6);
+  color: rgba(230,230,230,0.75);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 12px;
+  transform: none;
+  pointer-events: none;
+}
+
+/* Music button: exactly 50x50, fixed, accessible for touch */
+.music-btn {
+  position: fixed;
+  right: 14px;
+  bottom: calc(env(safe-area-inset-bottom, 10px) + 14px); /* placed with margin; visible and reachable */
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--ui);
+  color: var(--fg);
+  border: 0;
+  font-size: 18px;
+  z-index: 4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.music-btn[aria-pressed="true"] {
+  background: var(--accent-2);
+  color: #07110a;
+}
+

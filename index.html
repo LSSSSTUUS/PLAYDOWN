@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <title>Plataforma Mobile</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lucky+Guy&display=swap" rel="stylesheet">
+  <script type="importmap">
+  {
+    "imports": {
+      "seedrandom": "https://esm.sh/seedrandom@3.0.5"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div class="hud">
+    <div id="levelLabel">Lv 1</div>
+    <div id="fpsLabel"></div>
+    <div class="watermark" aria-hidden="true">creditos por LODES/DAVI</div>
+  </div>
+
+  <div class="controls">
+    <button class="btn left" aria-label="Esquerda">⟵</button>
+    <button class="btn right" aria-label="Direita">⟶</button>
+    <button class="btn jump" aria-label="Pular">⤒</button>
+  </div>
+
+  <!-- Music toggle button (50x50) -->
+  <button id="musicBtn" class="music-btn" aria-pressed="false" title="Música on/off">♪</button>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
+
